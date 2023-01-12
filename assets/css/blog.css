@@ -54,14 +54,14 @@ header{
     cursor: pointer;
 }
 .navbar ul{
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 .navbar ul a{
     font-size: 1.2rem;
     padding: 1.5rem;
-    text-transform: capitalize;
+    text-transform: uppercase;
     color: #5b5963;
     font-weight: 400;
     letter-spacing: 2px;
@@ -120,7 +120,7 @@ main .profile-container .profile .text{
     letter-spacing: 1px;
 }
 .profile .text h3{
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 .btn{
    display: inline-block;
@@ -218,12 +218,92 @@ blockquote{
     background: url(../img/cards.jpg) 
     no-repeat center center / cover;
     position: relative;
+    /* border-radius: 3rem; */
 }
 .cards .card-container.two .img-holder{
     background: url(../img/life.jpg) 
     no-repeat center center / cover;
+   /* border-radius: 3rem;*/
 }
 .cards .card-container.three .img-holder{
     background: url(../img/you.jpg) 
     no-repeat center center / cover;
+    /* border-radius: 3rem; */
+}
+.cards .card-container .img-holder a{
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    padding: 0.3rem 1.5rem;
+    display: inline-block;
+    color: #429f98;
+    background-color: white ;
+    /* border: 1px solid; */
+    border-radius: 4rem;
+    font-weight: 400;
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    transition: all 0.4s ease;
+    
+
+}
+.cards .card-container:hover{
+    transform: translateY(-1rem);
+}
+.cards .card-container:hover a{
+    background-color: aqua;
+    color: white;
+    
+}
+
+.cards .card-container .card-text{
+    background-color: white;
+    padding: 2rem;
+    box-shadow: 0 0 0.2rem grey;
+
+}
+.cards .card-container .card-text h4{
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+
+}
+.cards .card-container .card-text p{
+    font-size: 1.2rem;
+}
+.articles .button{
+    margin: 0 auto;
+    text-align: center;
+}
+.articles .btn{
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    font-weight: 200;
+    border-radius: none;
+    padding: 0.5rem 3rem;
+}
+footer{
+    background-color: #222;
+    padding: 3rem 0;
+}
+.icons{
+    text-align:  center;
+}
+.icons .social i{
+   font-size: 3rem;
+   color: grey;
+   padding: 1rem; 
+   transition: all 0.4s ease;
+
+}
+.icons .social i:hover{
+    color: white;
+    cursor: pointer;
+
+}
+.icons .copyright p{
+   font-size: 1.2rem;
+   letter-spacing: 1px;
+   color: white; 
+   margin: 2rem 0;
 }
