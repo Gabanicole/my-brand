@@ -1,156 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/dashboard.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Admin Panel</title>
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<!-- My CSS -->
+	<link rel="stylesheet" href="./assets/css/dashboard.css">
+
+	<title>Dashboard</title>
 </head>
 <body>
-    <div class="sidebar">
-        <div class="logo-details">
-            <div class="logo_name">My brand</div>
-            <i class='bx bx-menu' id="btn" ></i>
-        </div>
 
-            <ul class="nav-list">
-              <li>
-                <a href="dashboard.html">
-                  <i class='bx bx-grid-alt'></i>
-                  <span class="links_name">Dashboard</span>
-                </a>
-                 <span class="tooltip">Dashboard</span>
-              </li>
-              <li>
-               <a href="message.html">
-                 <i class='fa fa-envelope' ></i>
-                 <span class="links_name">Messages</span>
-               </a>
-               <span class="tooltip">Messages</span>
-             </li>
-             <li>
-               <a href="blog1.html">
-                <i class='bx bxl-bitcoin'></i>
-                 <span class="links_name">Blogs</span>
-               </a>
-               <span class="tooltip">Blogs</span>
-             </li>
-             <li>
-               <a href="#">
-                <i class='bx bxs-bell-ring'></i>
-                 <span class="links_name">Notification</span>
-               </a>
-               <span class="tooltip">Notification</span>
-             </li>
-             <li>
-               <a href="#">
-                 <i class='bx bx-cog' ></i>
-                 <span class="links_name">Setting</span>
-               </a>
-               <span class="tooltip">Setting</span>
-             </li>
-             <li>
-              <a href="#">
-                <i class='fa fa-question-circle' ></i>
-                <span class="links_name">Help</span>
-              </a>
-              <span class="tooltip">Help</span>
-            </li>
-             <li class="profile">
-                 <div class="profile-details">
-                     <div class="name">logout</div>
-                     <a href="index.html">
-                      <i class='bx bx-log-out' id="log_out" ></i>
-                      </a>
-                   </div>
-                 </div>
-             </li>
-            </ul>
-        </ul>
-    </div>
-    <div class="container">
-        <div class="header">
-            <div class="nav">
-                <div class="search">
-                    <input type="text" placeholder="Search..">
-                    <button type="submit"><img src="" alt=""></button>
-                </div>
-                <div class="user">
-                    <a href="newBlog.html" class="btn"> New Blog</a>
-                    <div>
-                    <img src="" alt="Avatar" class="avatar">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="content">
-            <div class="cards">
-                <div class="card">
-                    <div class="box">
-                        <h1>21</h1>
-                        <h3>posts</h3>
-                    </div>
-                    <div class="icon-case">
-                      <i class='bx bxs-detail'></i>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="box">
-                        <h1>53</h1>
-                        <h3>likes</h3>
-                    </div>
-                    <div class="icon-case">
-                      <img src="packages/images/bxs-heart.svg" alt="">
-                      <!-- <i class='bx bxs-like'></i> -->
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="box">
-                        <h1>5</h1>
-                        <h3>comments</h3>
-                    </div>
-                    <div class="icon-case">
-                      <i class='bx bxs-comment-detail'></i>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="box">
-                        <h1>35</h1>
-                        <h3>visitors</h3>
-                    </div>
-                    <div class="icon-case">
-                      <i class='bx bxs-user-detail'></i>
-                    </div>
-                </div>
-            </div>
-            <div class="content-2">
-                <div class="recent-blogs">
-                    <div class="title">
-                      <h3>RECENT BLOG</h3>
-                    </div>
-                    <table >
-                        <tr>
-                            <th>profile</th>
-                            <th>title</th>
-                            <th >update</th>
-                            <th>delete</th>
-                        </tr>
-                        <tr>
-                          <td><img src="packages/images/js.png" width="45%" height="25% "alt=""></td>
-                          <td>JavaScript</td>
-                          <td><a href="#" class="btn">update</a></td>
-                          <td><a href="#" class="btn">Delete</a></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-  
+
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand">
+			<i class='bx bxs-smile'></i>
+			<span class="text">NicoleAdmin</span>
+		</a>
+		<ul class="side-menu top">
+			<li class="active">
+				<a href="#">
+					<i class='bx bxs-dashboard' ></i>
+					<span class="text">Dashboard</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bxs-shopping-bag-alt' ></i>
+					<span class="text">Message</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bxs-doughnut-chart' ></i>
+					<span class="text">Blogs</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bxs-message-dots' ></i>
+					<span class="text">Notifaction</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bxs-group' ></i>
+					<span class="text">Author</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="side-menu">
+			<li>
+				<a href="#">
+					<i class='bx bxs-cog' ></i>
+					<span class="text">Settings</span>
+				</a>
+			</li>
+			<li>
+				<a href="#" class="logout">
+					<i class='bx bxs-log-out-circle' ></i>
+					<span class="text">Logout</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+
+
+
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
+			<a href="#" class="nav-link">Categories</a>
+			<form action="#">
+				<div class="form-input">
+					<input type="search" placeholder="Search...">
+					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+				</div>
+			</form>
+			<input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label>
+			<a href="#" class="notification">
+				<i class='bx bxs-bell' ></i>
+				<span class="num">8</span>
+			</a>
+			<a href="#" class="profile">
+				<img src="./assets/img/Nicole.jpeg">
+			</a>
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					<h1>Dashboard</h1>
+					<ul class="breadcrumb">
+						<li>
+							<a href="#">Dashboard</a>
+						</li>
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a class="active" href="#">Home</a>
+						</li>
+					</ul>
+				</div>
+				<a href="#" class="btn-download">
+					<i class='bx bxs-cloud-download' ></i>
+					<span class="text">Download PDF</span>
+				</a>
+			</div>
+
+			<ul class="box-info">
+				<li>
+					<i class='bx bxs-calendar-check' ></i>
+					<span class="text">
+						<h3>1</h3>
+						<p>New Blog</p>
+					</span>
+				</li>
+				<li>
+					<i class='bx bxs-group' ></i>
+					<span class="text">
+						<h3>2</h3>
+						<p>Subscribers</p>
+					</span>
+				</li>
+				<li>
+					<i class='bx bxs-dollar-circle' ></i>
+					<span class="text">
+						<h3>43</h3>
+						<p>Comments </p>
+					</span>
+				</li>
+			</ul>
+
+
+			<div class="table-data">
+				<div class="order">
+					<div class="head">
+						<h3>Recent Blog</h3>
+						<i class='bx bx-search' ></i>
+						<i class='bx bx-filter' ></i>
+					</div>
+					<table>
+						<thead>
+							<tr>
+								<th>Author</th>
+								<th>Date </th>
+								<th>Status</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<img src="./assets/img/Nicole.jpeg">
+									<p>Nicole Munezero</p>
+								</td>
+								<td>01-10-2023</td>
+								<td><span class="status completed">Completed</span></td>
+							</tr>
+							
+						</tbody>
+					</table>
+				</div>
+				<div class="todo">
+					<div class="head">
+						<h3>Messages</h3>
+						<i class='bx bx-plus' ></i>
+						<i class='bx bx-filter' ></i>
+					</div>
+					<ul class="todo-list">
+						<li class="completed">
+							<p>We love what you do</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+						<li class="completed">
+							<p>I want to know more</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+						<li class="not-completed">
+							<p>How can I contact you</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+						<li class="completed">
+							<p>How to speak with </p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+						<li class="not-completed">
+							<p>i want to hire you</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</main>
+		<!-- MAIN -->
+	</section>
+	<!-- CONTENT -->
+	
+
+
 </body>
-
 </html>
