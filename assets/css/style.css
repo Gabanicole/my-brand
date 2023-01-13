@@ -884,24 +884,8 @@ a {
   outline: none;
   padding: 0.25rem 0.5rem 0.5rem 0;
 }
-/* .blog {
-  display: flex;
-  align-items: center;
-  justify-content: center
-} */
 
- .blog_img{
-  flex-basis: 20%;
-  float: left;
-  margin: 30px 12px 3px 4px;
 
-  } 
-
-.blog_info {
-  font-size: 20px;
-  padding-left: 20px;
-  display: flex;
-}
 .button{
   cursor: pointer;
   size: var(--mb-0-5);
