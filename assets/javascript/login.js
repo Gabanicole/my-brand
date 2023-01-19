@@ -1,19 +1,32 @@
-let form = document.getElementById('form')
-
-form.addEventListener('submit',(e) =>{
-
-    if( localStorage.getItem('username') && localStorage.getItem('password')){
-       
-        document.getElementById( 'username'). value = localStorage.getItem('username')
-        document.getElementById( 'password'). value = localStorage.getItem('password')
+const pass_field = document.querySelector('.pass-key');
+const showBtn = document.querySelector('.show');
+showBtn.addEventListener('click', function(){
+ if(pass_field.type === "password"){
+   pass_field.type = "text";
+   showBtn.textContent = "HIDE";
+   showBtn.style.color = "#3498db";
+ }else{
+   pass_field.type = "password";
+   showBtn.textContent = "SHOW";
+   showBtn.style.color = "#222";
+ }
+});
+const attemp=3;
+function validate(){
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+   if(username =="gabanicole250@gmail.com" && password == 12345){
+      
+      Window.location.href = form.getAttribute("action");
+     
+     return false;
+   }
+    attemp--;
+    alert("you have left "+attemp+"attemp;");
+    if(attemp==0){
+       document.getElementById("username").disabled= true;
+       document.getElementById("password").disabled= true;
+     document.getElementById("submit").disabled= true;
+      return false;
     }
-    e.preventDefault()
-   let username = document.getElementById('username').value
-   let password = document.getElementById('password').value
-
-   //local storage
-   localStorage.setItem('username', username)
-   localStorage.setItem('password', password)
-
-   alert('Your details are saved in localstorage')
-})
+   }
