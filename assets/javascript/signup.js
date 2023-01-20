@@ -10,14 +10,14 @@ signup.addEventListener('click', async (e) => {
       email,
       password,
     });
-    alert("signup successfully");
+    window.confirm("signup successfully");
       location.assign('/userLogin.html');
   } catch (error) {
     console.log(error);
     if (error.response.data?.message) {
-        alert( `${error.response.data.message}`);
+        window.confirm( `${error.response.data.message}`);
     } else {
-        alert( `${error.message}`);
+        window.confirm( `${error.message}`);
     }
   }
 });
