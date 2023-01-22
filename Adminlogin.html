@@ -1,51 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="./assets/css/login.css">
-
-    
-    <title>Login</title>
-</head>
-<body>
-    <div class=" center" id="form">
-        <h1>Admin login</h1>
-        <form method="post" action="dashboard.html">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/signup.css" />
+    <title>Adminlogin</title>
+  </head>
+  <body>
+    <div class="container">
+      <form id="form" class="form">
+        <h2>AdminLogin</h2> 
+        
+        <div class="form-control">
+          <label for="username">Username</label>
+          <input type="text" id="username" placeholder="Enter username" />
+          <small>Error Message</small>
+        </div>
+       
+        <div class="form-control">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter password" />
+          <small>Error Message</small>
+        </div>
+        
+        <p class="text">
+          Not Admin 
+          <a href="userlogin.html">Login</a> <br>
           
-          <div class="txt_field">
-            <input id="username" type="text" name="username" value="" required>
-            <span></span>
-            <label for="">Username</label>
-          </div>  
+       
+        </p> 
 
-          <div class="txt_field">
-            <input id="password" type="password" name="password" value="" required>
-            <span></span>
-            <label for="">Password</label>
-          </div>
-
-          <div class="pass">
-            Forgot Password
-          </div>
-
-          <input  type="submit" name="" 
-          value="Login" onclick="validate()">
-
-          <div class="signup_link">
-            Not a Admin? <a href="userlogin.html">Login</a>
-          </div>
-
-        </form>
+        <button>Login</button>
+      </form>
     </div>
+    <script src="./assets/javascript/signup.js"></script>
+  </body>
+</html>
+         
 
     
     
   
-  <script src="./assets/javascript/adminlogin.js"></script>
-   
-</body>
-</html>
+ >

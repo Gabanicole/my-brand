@@ -12,7 +12,8 @@ Skip to content
 }
 
 body {
-  background-color: #5fade0;
+  /* background-color:  #2691d9; */
+  background: linear-gradient(120deg,#addbfa,#fefdff);
   font-family: 'Open Sans', sans-serif;
   display: flex;
   align-items: center;
@@ -22,9 +23,9 @@ body {
 }
 
 .container {
-  background-color: #fff;
+  background: #fff;
   border-radius: 5px;
-  box-shadow: 0 2px 10px rgba(221, 73, 73, 0.3);
+  /* box-shadow: 0 2px 10px rgba(221, 73, 73, 0.3); */
   width: 400px;
 }
 
@@ -85,8 +86,8 @@ h2 {
 
 .form button {
   cursor: pointer;
-  background-color: #3498db;
-  border: 2px solid #3498db;
+  background-color:  #2691d9;
+  border: 2px solid  #2691d9;
   border-radius: 4px;
   color: #fff;
   display: block;
