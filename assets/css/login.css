@@ -24,12 +24,12 @@ body{
     padding: 0 40px;
     box-sizing: border-box;
 }
-form .txt_field{
+form .form-control{
 position: relative;  
 border-bottom:2px solid #adadad;
 margin: 30px 0 ;
 }
-.txt_field input{
+.form-control input{
     width: 100%;
     padding:0 5px;
     height: 40px;
@@ -38,7 +38,7 @@ margin: 30px 0 ;
     background: none ;
     outline: none;
 }
-.txt_field label{
+.form-control label{
     position: absolute;
     top:50%;
     left: 5%;
@@ -48,7 +48,7 @@ margin: 30px 0 ;
 pointer-events: none;
 transition: .5s;
 }
-.txt_field span::before{
+.form-control span::before{
     content: '';
     position: absolute;
     top: 40px;
@@ -58,13 +58,13 @@ transition: .5s;
     background: #2691d9;
     transition: .5s;
 }
-.txt_field input:focus ~ label,
-.txt_field input:valid ~ label{
+.form-control input:focus ~ label,
+.form-control input:valid ~ label{
     top: -5px;
     color: #2691d9;
 }
-.txt_field input:focus ~ span::before,
-.txt_field input:valid ~ span::before{
+.form-control input:focus ~ span::before,
+.form-control input:valid ~ span::before{
     width: 100%;
 }
 .pass{
@@ -103,4 +103,8 @@ input[type="submit"]:hover{
 }
 .signup_link a:hover{
     text-decoration: underline;
+}
+
+.form-control.success input{
+    text-decoration: green;
 }
