@@ -1,27 +1,66 @@
-async function loginUser() {
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-    console.log(email);
-    try {
-        const SignIn = await fetch("https://localhost:3000/api/users/signin", { 
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-               
-            },
-            
-            body: JSON.stringify({
-                email: email,
-                password: password,
-            }),
-        });
-       
-      
-        const response = await SignIn.json();
-        console.log(response);
-      
-    } catch (error) {
-        console.log(error)
-        
-    }
+const form = document.getElementById('form');
+const username = document.getElementById('username');
+const password = document.getElementById('password');
+
+
+// show input error message
+function showError(input, message) {
+  const formControl = input.parentElement;
+  formControl.className = 'form-control error';
+  const small = formControl.querySelector('small');
+  small.innerText = message;
 }
+
+// show success message
+function showSuccess(input) {
+  formControl = input.parentElement;
+  formControl.className = 'form-control success';
+}
+
+
+
+//check required fields
+function checkRequired(inputArr) {
+  inputArr.forEach(function (input) {
+    if (input.value.trim() === '') {
+      showError(input, `${getFieldName(input)} is required`);
+    } else {
+      showSuccess(input);
+    }
+  });
+}
+
+//check input lenght
+function checkLength(input, min, max) {
+  if (input.value.length < min) {
+    showError(input, `${getFieldName(input)} must be at least ${min} characters`);
+  } else if (input.value.length > max) {
+    showError(input, `${getFieldName(input)} must be less than ${max} characters`);
+  } else {
+    showSuccess(input);
+  }
+}
+
+// check passwords match
+
+function checkPasswordsMatch(input1, input2) {
+  if (input1.value !== input2.value) {
+    showError(input2, 'Passwords do not match');
+  }
+}
+
+// Get fieldname
+function getFieldName(input) {
+  return input.id.charAt(0).toUpperCase() + input.id.slice(1);
+}
+
+// Event listeners
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  checkRequired([username, email, password, password2]);
+  checkLength(username, 3, 15);
+  checkLength(password, 6, 25);
+  checkEmail(email);
+  checkPasswordsMatch(password, password2);
+});
