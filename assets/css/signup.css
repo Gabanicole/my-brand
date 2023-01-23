@@ -1,11 +1,11 @@
-Skip to content
+
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&dispay=swap');
 
-:root {
+/* :root {
   --success-color: #23cc71;
   --error-color: #f0331e;
-}
+} */
 
 * {
   box-sizing: border-box;
@@ -25,7 +25,7 @@ body {
 .container {
   background: #fff;
   border-radius: 5px;
-  /* box-shadow: 0 2px 10px rgba(221, 73, 73, 0.3); */
+  box-shadow: 0 2px 10px rgba(221, 73, 73, 0.3); 
   width: 400px;
 }
 
@@ -65,11 +65,11 @@ h2 {
 }
 
 .form-control.success input {
-  border-color: var(--success-color);
+  border-color: green;
 }
 
 .form-control.error input {
-  border-color: var(--error-color);
+  border-color: red;
   
 }
 
