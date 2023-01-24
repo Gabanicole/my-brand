@@ -1,56 +1,53 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Blog</title>
-    <link rel="stylesheet" href="./assets/css/new.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  
+  <link rel="stylesheet" href="./assets/css/newblog.css">
 
+  <title>new blog</title>
 </head>
 <body>
+  <div class="app">
+    <h4> Blogs</h4>
+    <div id="addnew">
+      <span>Add New Blog</span>
+      <i class="fas fa-plus"></i>
+    </div>
+    <h5>Blogs</h5>
+
+    <!-- modal -->
     
-    <!-- <div class="container" class="modal-content"> -->
-    <div class="content">
-        <div class="modal-header">
-            <span class="close">&times;</span>
-           
-          </div>
-        <h1>UPLOAD NEW BLOG</h1>
-        <form id="postBlog" method="POST" >
-       <input type="text" name="name" id="postTitle" placeholder="blog title" ><br>
-        <textarea name="details" id="postDetails" placeholder="description"  rows="7" cols="40" style="width:100%;max-width:350px;"></textarea>
-        <br>
-       <input type="file" name="image" id="postImage"/><br>
-            <div>
-            <button  class="btn" type="submit" onclick="pop()"> UPLOAD </button>
-            </div>
-        <p class="text"> <a href="dashboard.html">Go back to dashboard</a> </p> 
 
-        </form>
-</div> 
-<script src=""></script>
+    <div id="blogs">
+      <div>
+        <span class="txt-title">Blog 1</span>
+        <span class="txt-date">2023.01.24</span>
+        <p>going to start a software comapny</p>
 
-<script>
-    var modal = document.getElementById("myModal");
+        <span class="options">
+          <i class="fas fa-edit"></i>
+          <i class="fas fa-trash-alt"></i>
+        </span>
+      </div>
+        <div>
+          <span class="txt-title">Blog 2</span>
+        <span class="txt-date">2023.01.24</span>
+        <p>going to start a software comapny</p>
 
-var btn = document.getElementById("myBtn");
-
-var span = document.getElementsByClassName("close")[0];
- 
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-function pop(){
-  window.confirm("POST ADDED SUCCESSFULLY")
-}
-</script>
-<script src=""></script>
-
+        <span class="options">
+          <i class="fas fa-edit"></i>
+          <i class="fas fa-trash-alt"></i>
+        </span>
+        </div>
+        
+      
+    </div>
+  </div>
+  
 </body>
+<script src="./assets/javascript/newblog.js"></script>
 </html>

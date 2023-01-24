@@ -114,3 +114,25 @@ if (user = null){
 }
 
 }
+
+
+//get location
+
+var x= document.getElementById("location");
+
+function getlocation(){
+  if(navigator.geolocation){
+    navigator.geolocation.getCurrentPosition(showPosition)
+
+  }
+  else{
+    alert("sorry! your browser is not supporting")
+  }
+}
+
+function showPosition(position){
+
+  var x = "your current location is ("+" latitude:"+position.coords.longitude+")";
+
+  document.getElementById("location").innerHTML = x;
+}
