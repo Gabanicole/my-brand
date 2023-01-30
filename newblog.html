@@ -15,15 +15,50 @@
     <h4> Blogs</h4>
     <div id="addnew">
       <span>Add New Blog</span>
-      <i class="fas fa-plus"></i>
+      <i id="myBtn" class="fas fa-plus"></i>
     </div>
     <h5>Blogs</h5>
 
+    
+
     <!-- modal -->
+    <form action="" id="form" class="modal">
+      <div class="content">
+        <h3>Add New blog</h3>
+         
+          <div class="content-modal">
+          
+            <p>Task Title</p>
+            <input type="text" class="form-control" name="" id="textInput">
+            <div id="msg"></div>
+            <br>
+            <p>Due Date</p>
+            <input type="date" class="form-control" name="" id="dateInput">
+            <br>
+            <p>Description</p>
+            <textarea name="" class="form-control" id="textarea" cols="30" rows="5"></textarea>
+          
+        <br>
+
+        <form action="/action_page.php">
+          <input style="color: red;" type="file" id="myFile" name="filename">
+        
+        </form>
+        
+
+        <div class="modal-footer">
+          <button class="close">Close</button>
+          <button type="submit" class="add"id="add">Add</button>
+        </div>
+
+
+          
+      </div>  
+    </form>
     
 
     <div id="blogs">
-      <div>
+      <!-- <div>
         <span class="txt-title">Blog 1</span>
         <span class="txt-date">2023.01.24</span>
         <p>going to start a software comapny</p>
@@ -45,7 +80,7 @@
         </div>
         
       
-    </div>
+    </div> -->
   </div>
   
 </body>
