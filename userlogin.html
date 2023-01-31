@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/signup.css" />
+    <script type="text/javascript" src="./assets/js/userlogin.js"></script>
     <title>Userlogin</title>
   </head>
   <body>
     <div class="container">
-      <form id="form" class="form" ">
+      <form id="form" class="form" method="POST" action="blog.html">
         <h2>Login</h2>
         <div class="form-control">
           <label for="username">Username</label>
@@ -30,10 +31,10 @@
        
         </p> 
 
-        <button>Login</button>
+        <button onclick="handleSubmit()">Login</button>
       </form>
     </div>
-    <script src="./assets/javascript/userlogin.js"></script>
+   
     
   </body>
 </html>
