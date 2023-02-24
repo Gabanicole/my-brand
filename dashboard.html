@@ -2,73 +2,231 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<!-- Boxicons -->
-	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-	<!-- My CSS -->
+	<title>Document</title>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet" />
 	<link rel="stylesheet" href="./assets/css/dashboard.css">
-
-	<title>Dashboard</title>
 </head>
 <body>
+	<div class="container">
+		<aside>
+			<div class="top">
+				<div class="logo">
+					<h2>Nicole</h2>
+				</div>
+				<div class="close" id="close-btn">
+					<span class="material-icons-sharp">close</span>
+				</div>
+			</div>
 
-
-	<!-- SIDEBAR -->
-	<section id="sidebar">
-		<a href="#" class="brand">
-			<i class='bx bxs-smile'></i>
-			<span class="text">NicoleAdmin</span>
-		</a>
-		<ul class="side-menu top">
-			<li class="active">
+			<div class="sidebar">
 				<a href="#">
-					<i class='bx bxs-dashboard' ></i>
-					<span class="text">Dashboard</span>
+					<span class="material-icons-sharp">grid_view</span>
+					<h3>dashboard</h3>
 				</a>
-			</li>
-			<li>
+				<a href="#" class="active">
+					<span class="material-icons-sharp">person_outline</span>
+					<h3>Users</h3>
+				</a>
 				<a href="#">
-					<i class='bx bxs-shopping-bag-alt' ></i>
-					<span class="text">Message</span>
+					<span class="material-icons-sharp">receipt_long</span>
+					<h3>Orders</h3>
 				</a>
-			</li>
-			<li>
-				<a href="./newblog.html">
-					<i class='bx bxs-doughnut-chart' ></i>
-					<span  class="text">Blogs</span>
-				</a>
-			</li>
-			<li>
-				<a href="./result.html">
-					<i class='bx bxs-message-dots' ></i>
-					<span class="text">Users</span>
-				</a>
-			</li>
-		
-		</ul>
-		<ul class="side-menu">
-			<li>
 				<a href="#">
-					<i class='bx bxs-cog' ></i>
-					<span class="text">Settings</span>
+					<span class="material-icons-sharp">insights</span>
+					<h3>Analytics</h3>
 				</a>
-			</li>
-			<li>
-				<a href="#" class="logout">
-					<i class='bx bxs-log-out-circle' ></i>
-					<span class="text">Logout</span>
+				<a href="#">
+					<span class="material-icons-sharp">mail_outline</span>
+					<h3>Messages</h3>
+					<span class="message-count">4</span>
 				</a>
-			</li>
-		</ul>
-	</section>
-	<!-- SIDEBAR -->
+				<a href="#">
+					<span class="material-icons-sharp ">inventory</span>
+					<h3>Blog</h3>
+				</a>
+				<a href="#">
+					<span class="material-icons-sharp">report_gmailerrorred</span>
+					<h3>Reports</h3>
+				</a>
+				<a href="#">
+					<span class="material-icons-sharp">settings</span>
+					<h3>Setting</h3>
+				</a>
+				<a href="#">
+					<span class="material-icons-sharp">add</span>
+					<h3>Add Blog</h3>
+				</a>
+				<a href="#">
+					<span class="material-icons-sharp">logout</span>
+					<h3>Logout</h3>
+				</a>
+			</div>
+
+		</aside>
+
+		<!-- END OF ASIDE -->
+		<main>
+			<h1>Dashboard</h1>
+			<div class="date">
+				<input type="date">
+			</div>
+
+			<!-- <div class="insights">
+				<div class="sales">
+					<span class="material-icons-sharp">analytics</span>
+
+					<div class="div"></div>
+				</div>
+
+			</div> -->
+
+			<div class="recent-orders">
+				<h2>Recent Blogs</h2>
+				<table>
+					<thead>
+						<tr>
+							<th>Blog name</th>
+							<th>Blog Author</th>
+							<th>Blog</th>
+							<th>Detaitls</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Dream BIg</td>
+						    <td>Nicole mune</td>
+						    <td class="primary">hhhhhs</td>
+						    <td class="warning">Pending</td>
+						</tr>
+						<tr>
+							<td>Dream BIg</td>
+						    <td>Nicole mune</td>
+						    <td class="primary">hhhhhs</td>
+						    <td class="warning">Pending</td>
+						</tr>
+						
+						<tr>
+							<td>Dream BIg</td>
+						    <td>Nicole mune</td>
+						    <td class="primary">hhhhhs</td>
+						    <td class="warning">Pending</td>
+						</tr>
+						
+						<tr>
+							<td>Dream BIg</td>
+						    <td>Nicole mune</td>
+						    <td class="primary">hhhhhs</td>
+						    <td class="warning">Pending</td>
+						</tr>
+						
+						<tr>
+							<td>Dream BIg</td>
+						    <td>Nicole mune</td>
+						    <td class="primary">hhhhhs</td>
+						    <td class="warning">Pending</td>
+						</tr>
+						
+						<tr>
+							<td>Dream BIg</td>
+						    <td>Nicole mune</td>
+						    <td class="primary">hhhhhs</td>
+						    <td class="warning">Pending</td>
+						</tr>
+						
+						<tr>
+							<td>Dream BIg</td>
+						    <td>Nicole mune</td>
+						    <td class="primary">hhhhhs</td>
+						    <td class="warning">Pending</td>
+						</tr>
+						
+						<tr>
+							<td>Dream BIg</td>
+						    <td>Nicole mune</td>
+						    <td class="primary">hhhhhs</td>
+						    <td class="warning">Pending</td>
+						</tr>
+						
+						
+					</tbody>
+				</table>
+				<a href="#">Show All</a>
+			</div>
+		</main>
+
+		<!-- END OF MAIN -->
+
+		<div class="right">
+			<div class="top">
+				<button id="menu-btn">
+					<span class="material-icons-sharp">menu</span>
+				</button>
+				<div class="theme-toggler">
+					<span class="material-icons-sharp">light_mode</span>
+					<span class="material-icons-sharp">dark_mode</span>
+				</div>
+				<div class="profile">
+					<div class="info">
+						<p>Hey, <b>Nicole</b></p>
+						<small class="text-muted">Admin</small>
+					</div>
+					<div class="profile-picture">
+						<img src="./assets/New folder/profile-2.jpg" alt="">
+					</div>
+				</div>
+			</div>
+			<!-- End of top -->
+			<div class="recent-updates">
+				<h2>Recent Updates</h2>
+				<div class="updates">
+					<div class="update">
+						<div class="profile-picture">
+							<img src="./assets/New folder/profile-4.jpg" alt="">
+						</div>
+						<div>
+							<div class="message">
+								<p><b>Mike</b> Receive his message</p>
+								<small class="text-muted"> 2minutes ago</small>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="updates">
+					<div class="update">
+						<div class="profile-picture">
+							<img src="./assets/New folder/profile-4.jpg" alt="">
+						</div>
+						<div>
+							<div class="message">
+								<p><b>Mike</b> Receive his message</p>
+								<small class="text-muted"> 2minutes ago</small>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="updates">
+					<div class="update">
+						<div class="profile-picture">
+							<img src="./assets/New folder/profile-3.jpg" alt="">
+						</div>
+						<div>
+							<div class="message">
+								<p><b>Mike</b> Receive his message</p>
+								<small class="text-muted"> 2minutes ago</small>
+							</div>
+						</div>
+					</div>
+				</div>
 
 
 
-
-
-	 <script src="./assets/javascript/script.js"></script>
-
+			</div>
+		</div>
+	</div>
+	
 </body>
 </html>
