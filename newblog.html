@@ -1,88 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-  
-  <link rel="stylesheet" href="./assets/css/newblog.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Blog</title>
+    <link rel="stylesheet" href="./assets/css/new.css">
 
-  <title>new blog</title>
 </head>
 <body>
-  <div class="app">
-    <h4> Blogs</h4>
-    <div id="addnew">
-      <span>Add New Blog</span>
-      <i id="myBtn" class="fas fa-plus"></i>
-    </div>
-    <h5>Blogs</h5>
-
     
-
-    <!-- modal -->
-    <form action="" id="form" class="modal">
-      <div class="content">
-        <h3>Add New blog</h3>
-         
-          <div class="content-modal">
-          
-            <p>blog Title</p>
-            <input type="text" class="form-control" name="" id="textInput">
-            <div id="msg"></div>
-            <br>
-            <p>Due Date</p>
-            <input type="date" class="form-control" name="" id="dateInput">
-            <br>
-            <p>Description</p>
-            <textarea name="" class="form-control" id="textarea" cols="30" rows="5"></textarea>
-          
+    <!-- <div class="container" class="modal-content"> -->
+    <div class="content">
+        <div class="modal-header">
+            <span class="close">&times;</span>
+           
+          </div>
+        <h1>UPLOAD NEW BLOG</h1>
+        <form id="postBlog" method="POST" >
+       <input type="text" name="name" id="postTitle" placeholder="blog title" ><br>
+        <textarea name="details" id="postDetails" placeholder="description"  rows="7" cols="40" style="width:100%;max-width:350px;"></textarea>
         <br>
+       <input type="file" name="image" id="postImage"/><br>
+            <div>
+            <button  class="btn" type="submit" onclick="pop()"> UPLOAD </button>
+            </div>
+        <p class="text"> <a href="dashboard.html">Go back to dashboard</a> </p> 
 
-        <form action="/action_page.php">
-          <input style="color: red;" type="file" id="myFile" name="filename">
-        
         </form>
-        
+</div> 
+<script src="./packages/js/blog.js"></script>
 
-        <div class="modal-footer">
-          <button class="close">Close</button>
-          <button type="submit" class="add"id="add">Add</button>
-        </div>
+<script>
+    var modal = document.getElementById("myModal");
 
+var btn = document.getElementById("myBtn");
 
-          
-      </div>  
-    </form>
-    
+var span = document.getElementsByClassName("close")[0];
+ 
+span.onclick = function() {
+  modal.style.display = "none";
+}
 
-    <div id="blogs">
-      <!-- <div>
-        <span class="txt-title">Blog 1</span>
-        <span class="txt-date">2023.01.24</span>
-        <p>going to start a software comapny</p>
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+function pop(){
+    window.alert("POST ADDED SUCCESSFULLY")
+}
+</script>
+<script src="./assets/js/global.js"></script>
 
-        <span class="options">
-          <i class="fas fa-edit"></i>
-          <i class="fas fa-trash-alt"></i>
-        </span>
-      </div>
-        <div>
-          <span class="txt-title">Blog 2</span>
-        <span class="txt-date">2023.01.24</span>
-        <p>going to start a software comapny</p>
-
-        <span class="options">
-          <i class="fas fa-edit"></i>
-          <i class="fas fa-trash-alt"></i>
-        </span>
-        </div>
-        
-      
-    </div> -->
-  </div>
-  
 </body>
-<script src="./assets/javascript/newblog.js"></script>
 </html>

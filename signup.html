@@ -9,37 +9,37 @@
   </head>
   <body>
     <div class="container">
-      <form id="form" class="form" onsubmit="signup()" >
+      <form id="form" class="form" >
         <h2>Sign Up</h2>
         
         <div class="form-control">
           <label for="username">Username</label>
-          <input type="text" id="username" placeholder="Enter username" />
+          <input type="text" id="username" name="username" placeholder="Enter username" />
           <small>Error Message</small>
         </div>
 
         <div class="form-control">
           <label for="email">Email</label>
-          <input type="text" id="email" placeholder="Enter email" />
+          <input type="text" id="email"  name="email" placeholder="Enter email" />
           <small>Error Message</small>
         </div>
 
         <div class="form-control">
           <label for="password">Password</label>
-          <input type="password" id="password" placeholder="Enter password" />
+          <input type="password" id="password"  name="password" placeholder="Enter password" />
           <small>Error Message</small>
         </div>
 
-        <div class="form-control">
+        <!-- <div class="form-control">
           <label for="password2">Confirm Password</label>
           <input type="password" id="password2" placeholder="Enter password again" />
           <small>Error Message</small>
-        </div>
+        </div> -->
 
         <p class="text">
       Already a member <a href="userlogin.html">login</a> </p> 
 
-        <button class="submit" onclick="getlocation()">Submit</button>
+        <button class="submit" type="submit">Submit</button>
         <p id="result"></p>
         <div id="location"></div>
       </form>
@@ -48,7 +48,37 @@
 
 
 
-    <script src="./assets/javascript/signup.js"></script>
+    <!-- <script src="./assets/javascript/signup.js"></script> -->
+    <script>
+      const submit = document.querySelector('.submit')
+      const username = document.querySelector('#username')
+      const email = document.querySelector('#email')
+      const password = document.querySelector('#password')
+
+      submit.addEventListener('click', (e) => {
+          e.preventDefault()
+
+          const signupData = {
+              username: username.value,
+              email: email.value,
+              password: password.value,
+            }
+            console.log(signupData)
+
+            const url="https://brand-api1.onrender.com/api/v1/users"
+            fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(signupData)
+        })
+        .then((response) => response.json())
+        .then((data) => {
+                console.log(data)
+        })
+      })
+    </script>
     
    
   </body>

@@ -13,14 +13,14 @@
       <form id="form" class="form" method="POST" action="blog.html">
         <h2>Login</h2>
         <div class="form-control">
-          <label for="username">Username</label>
-          <input type="text" id="username" placeholder="Enter username" />
+          <label for="username">Email</label>
+          <input type="text" id="email" name="email" placeholder="Enter email" />
           <small>Error Message</small>
         </div>
        
         <div class="form-control">
           <label for="password">Password</label>
-          <input type="password" id="password" placeholder="Enter password" />
+          <input type="password" name="password" id="password" placeholder="Enter password" />
           <small>Error Message</small>
         </div>
         
@@ -31,10 +31,37 @@
        
         </p> 
 
-        <button onclick="handleSubmit()">Login</button>
+        <button  class="submit" type="submit">Login</button>
       </form>
     </div>
-   
+    <script>
+      const submit = document.querySelector('.submit')
+      const email = document.querySelector('#email')
+      const password = document.querySelector('#password')
+
+      submit.addEventListener('click', (e) => {
+          e.preventDefault()
+
+          const loginData = {
+              email: email.value,
+              password: password.value,
+            }
+            console.log(loginData)
+
+            const url="https://brand-api1.onrender.com/api/v1/users/login"
+            fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(loginData)
+        })
+        .then((response) => response.json())
+        .then((data) => {
+                console.log(data)
+        })
+      })
+</script>
     
   </body>
 </html>
