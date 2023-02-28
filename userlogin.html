@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/signup.css" />
-    <script type="text/javascript" src="./assets/js/userlogin.js"></script>
+     <script type="text/javascript" src="./assets/js/userlogin.js"></script>
     <title>Userlogin</title>
   </head>
   <body>
@@ -35,32 +35,40 @@
       </form>
     </div>
     <script>
-      const submit = document.querySelector('.submit')
-      const email = document.querySelector('#email')
-      const password = document.querySelector('#password')
+        const submit = document.querySelector('.submit');
+const email = document.querySelector('#email');
+const password = document.querySelector('#password');
 
-      submit.addEventListener('click', (e) => {
-          e.preventDefault()
+submit.addEventListener('click', (e) => {
+  e.preventDefault();
 
-          const loginData = {
-              email: email.value,
-              password: password.value,
-            }
-            console.log(loginData)
+  const loginData = {
+    email: email.value,
+    password: password.value,
+  };
+  console.log(loginData);
 
-            const url="https://brand-api1.onrender.com/api/v1/users/login"
-            fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(loginData)
-        })
-        .then((response) => response.json())
-        .then((data) => {
-                console.log(data)
-        })
-      })
+  const url = "https://brand-api1.onrender.com/api/v1/users/login";
+  fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(loginData)
+  })
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data);
+    // Redirect to the blog page if login is successful
+    if (data.success) {
+      window.location.href = 'blog.html';
+    }
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
+});
+ 
 </script>
     
   </body>
