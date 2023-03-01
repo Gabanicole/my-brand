@@ -59,6 +59,8 @@ submit.addEventListener('click', (e) => {
   .then((response) => response.json())
   .then((data) => {
     console.log(data);
+
+
     // Redirect to the blog page if login is successful
     if (data.success) {
       window.location.href = 'https://warm-clafoutis-5c686e.netlify.app/blog.html';

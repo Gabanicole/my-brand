@@ -1,56 +1,70 @@
 <!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Blog</title>
-    <link rel="stylesheet" href="./assets/css/new.css">
-
+	<title>Create New Blog Post</title>
+	<link rel="stylesheet" type="text/css" href="./assets/css/newblog.css">
 </head>
 <body>
-    
-    <!-- <div class="container" class="modal-content"> -->
-    <div class="content">
-        <div class="modal-header">
-            <span class="close">&times;</span>
-           
-          </div>
-        <h1>UPLOAD NEW BLOG</h1>
-        <form id="postBlog" method="POST" >
-       <input type="text" name="name" id="postTitle" placeholder="blog title" ><br>
-        <textarea name="details" id="postDetails" placeholder="description"  rows="7" cols="40" style="width:100%;max-width:350px;"></textarea>
-        <br>
-       <input type="file" name="image" id="postImage"/><br>
-            <div>
-            <button  class="btn" type="submit" onclick="pop()"> UPLOAD </button>
-            </div>
-        <p class="text"> <a href="dashboard.html">Go back to dashboard</a> </p> 
+	<div class="header">
+		<h1>Create New Blog Post</h1>
+	</div>
 
-        </form>
-</div> 
-<script src="./packages/js/blog.js"></script>
+	<div class="container">
+		<form id="blogForm">
+			<div>
+				<label>Title</label><br>
+				<input type="text" id="title" required>
+			</div>
+			<div>
+				<label>Author</label><br>
+				<input type="text" id="author" required>
+			</div>
+			<div>
+				<label>Content</label><br>
+				<textarea id="content" rows="10" cols="50" required></textarea>
+			</div>
+			<div>
+				<label>Image</label><br>
+				<input type="file" id="image" accept="image/*" required>
+			</div>
+			<button type="submit">Create Post</button>
+		</form>
+	</div>
 
-<script>
-    var modal = document.getElementById("myModal");
+	<script >
+    const blogForm = document.querySelector('#blogForm');
 
-var btn = document.getElementById("myBtn");
+blogForm.addEventListener('submit', (e) => {
+	e.preventDefault();
 
-var span = document.getElementsByClassName("close")[0];
- 
-span.onclick = function() {
-  modal.style.display = "none";
-}
+	const title = document.querySelector('#title').value;
+	const author = document.querySelector('#author').value;
+	const content = document.querySelector('#content').value;
+	const image = document.querySelector('#image').files[0];
 
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
+	// Create a new FormData object and append form data
+	const formData = new FormData();
+	formData.append('title', title);
+	formData.append('author', author);
+	formData.append('content', content);
+	formData.append('image', image);
+
+	// Send form data to
+  fetch('dashboard.html', {
+  method: 'POST',
+  body: formData
+})
+.then(response => {
+  if (response.ok) {
+    console.log('Data sent successfully');
+    // Redirect to dashboard.html
+    window.location.href = 'dashboard.html';
+  } else {
+    console.error('Error sending data');
   }
-}
-function pop(){
-    window.alert("POST ADDED SUCCESSFULLY")
-}
-</script>
-<script src="./assets/js/global.js"></script>
+})
+.catch(error => console.error(error));
 
+  </script>
 </body>
 </html>
