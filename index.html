@@ -43,7 +43,7 @@
                             </a>
                         </li>
                         <li class="nav__item">
-                            <a href="userlogin.html" class="nav__link">
+                            <a href="blog.html" class="nav__link">
                                 <i class="uil uil-message nav__icon"></i>Blog                               
                             </a>
                         </li>
@@ -664,5 +664,56 @@
 
 
     <script src="./assets/javascript/main.js"></script>
+    <script>
+const submitMessage = document.querySelector('#submessage');
+const nameInput = document.querySelector('#name');
+const emailInput = document.querySelector('#email');
+const descriptionInput = document.querySelector('#description');
+const errorMsg = document.querySelector('.email-error');
+
+submitMessage.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  const messageData = {
+    name: nameInput.value,
+    email: emailInput.value,
+    description: descriptionInput.value,
+  };
+  console.log(messageData);
+
+  const url = "https://brand-api1.onrender.com/api/v1/queries";
+  fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(messageData)
+  })
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
+  .then((data) => {
+    console.log(data);
+    // Show success message if message is sent successfully
+    if (data.success) {
+      errorMsg.innerText = "";
+      alert("Your message was sent successfully!");
+      // Clear form inputs
+      nameInput.value = "";
+      emailInput.value = "";
+      descriptionInput.value = "";
+    }
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+    // Show error message if message is not sent successfully
+    errorMsg.innerText = "Sorry, there was an error sending your message. Please try again.";
+  });
+});
+
+    </script>
 </body>
 </html>
